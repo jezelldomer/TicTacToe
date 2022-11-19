@@ -154,6 +154,17 @@ def checkWin():
          clear()
          play()
 
+#function for clearing the board
+def clear():
+    btn1.set('')
+    btn2.set('')
+    btn3.set('')
+    btn4.set('')
+    btn5.set('')
+    btn6.set('')
+    btn7.set('')
+    btn8.set('')
+    btn9.set('')
 
 play()
 
