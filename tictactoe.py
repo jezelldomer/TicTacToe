@@ -1,3 +1,10 @@
+'''
+This is a Multiplayer Tic Tac Toe made by CodeFoxx'
+Reference: https://m.youtube.com/watch?v=E5bUdHQ_Ew0
+'''
+#Modified a little for the sizes of the pictures to make it not too big on the buttons and added a menu bar for exit
+
+
 #tictactoe using tkinter
 from tkinter import *
 import tkinter.messagebox
@@ -7,7 +14,7 @@ root = Tk()
 
 root.title('Tic-Tac-Toe')
 
-root.resizable(True,True)
+root.resizable(False,False)
 
 click = True
 
@@ -23,9 +30,11 @@ btn7 = StringVar()
 btn8 = StringVar()
 btn9 = StringVar()
 
+#Adding image as the X and O
 xPhoto = PhotoImage(file = 'X.png')
 oPhoto = PhotoImage(file = 'O.png')
 
+#Adding function for the board
 def play():
     button1 = Button(root,height=9,width=10,bd=.5,relief = 'ridge',bg = '#f2e6ff',textvariable = btn1,
                      command=lambda: press(1,0,0)) 
@@ -165,6 +174,20 @@ def clear():
     btn7.set('')
     btn8.set('')
     btn9.set('')
+
+#Created A Menubar to exit the game
+menubar = Menu(root)
+root.config(menu=menubar)
+file_menu = Menu(menubar)
+file_menu.add_command(
+    label='Exit',
+    command = root.destroy,
+)
+menubar.add_cascade(
+    label="Click here to Exit",
+    menu=file_menu,
+  
+)
 
 play()
 
